@@ -1,0 +1,79 @@
+{
+  "data": {
+    "_id": "74327ad41130c1684c10d254813d49b28f03549c",
+    "name": "Example Company Ltd",
+    "email": "",
+    "notes": "",
+    "phone": "",
+    "entity": "company",
+    "drivers": [],
+    "bank_acc": "",
+    "addresses": [],
+    "bank_name": "",
+    "discounts": {
+      "bending": 0,
+      "roofing-panel": 0,
+      "stock-product": 0,
+      "snow-retention": 0,
+      "complex-product": 0,
+      "roofing-fasteners": 0,
+      "rainwater-system-round": 0, 
+      "rainwater-system-square": 0
+    },
+    "legal_name": "Test Pavel",
+    "reg_number": "50000000000",
+    "vat_number": "LV50000000000",
+    "vat_status": "0",
+    "reg_address": "Demo iela 6, Ādaži, Ādažu nov., LV-2121",
+    "type": null,
+    "fname": "Pavel",
+    "lname": "Test",
+    "reg_num": null,
+    "vat_last_verified": null,
+    "tax_region": null,
+    "contacts": [
+        {
+            "id": "sqrQLk",
+            "name": "Test Pavel",
+            "email": "dev@example.com",
+            "notes": "",
+            "phone": "6500000000",
+            "primary": true
+        }
+    ],
+    "notifications": {
+        "promotions": {
+            "email": true,
+            "whatsapp": true
+        },
+        "order_ready": {
+            "email": true,
+            "whatsapp": true
+        },
+        "ask_feedback": {
+            "email": true,
+            "whatsapp": true
+        },
+        "order_received": {
+            "email": true,
+            "whatsapp": true
+        },
+        "order_cancelled": {
+            "email": true,
+            "whatsapp": true
+        },
+        "order_confirmed": {
+            "email": true,
+            "whatsapp": true
+        },
+        "payment_received": {
+            "email": true,
+            "whatsapp": true
+        }
+    }
+  },
+  "meta": {
+    "created": 1765027926,
+    "updated": 1765027926
+  }
+}

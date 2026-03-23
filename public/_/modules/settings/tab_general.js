@@ -1,0 +1,181 @@
+import { __html } from "../../helpers/global.js";
+
+export class TabGeneral {
+
+  constructor(settings = {}) {
+
+    this.settings = settings || {};
+
+    this.init();
+  }
+
+  init = () => {
+    const dim1Label = (this.settings.variation_dim_1_name || __html('Parent')).trim();
+    const dim2Label = (this.settings.variation_dim_2_name || __html('Title')).trim();
+
+    document.querySelector('tab-general').innerHTML = /*html*/`
+        <div>
+            <h4 id="h-general" class="card-title mb-4">${__html('General')}</h4>
+            <div class="row">
+              <div class="col-lg-6">
+                <div class="form-group row mb-3 mt-1">
+                  <label class="col-sm-3 col-form-label">${__html('Brand name')}</label>
+                  <div class="col-sm-9">
+                    <input id="brand_name" type="text" class="form-control inp" name="brand_name" data-type="text">
+                    <p class="form-text">${__html('Used for notifying users.')}</p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-6">
+                <div class="form-group row mb-3 mt-1">
+                  <label class="col-sm-3 col-form-label">${__html('Domain name')}</label>
+                  <div class="col-sm-9">
+                    <input id="domain_name" type="text" class="form-control inp" name="domain_name" data-type="text">
+                    <p class="form-text">${__html('Domain name associated with the user account and self-service platform.')}</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <h4 id="h-pricing" class="card-title mb-4">${__html('Attributes')}</h4>
+            <table class="price-table order-form mb-3">
+              <thead>
+                <tr><th><div class="me-1 me-sm-3">${__html('Site')}</div></th><th class="qty"><div class="me-1 me-sm-3">${__html('Code')}</div></th><th><div class="me-1 me-sm-3">${__html(dim1Label)}</div></th><th><div class="me-1 me-sm-3">${__html(dim2Label)}</div></th><th class="tp"><div class="me-1 me-sm-3">${__html('Price')}</div></th><th class="tp"><div class="me-1 me-sm-3">${__html('Unit')}</div></th><th></th></tr>
+                <tr class="new-item-row">
+                    <td>
+
+                    </td>
+                    <td class="tp">
+                        <div class="me-1 me-sm-3 mt-2">
+                            <input type="text" value="" autocomplete="off" class="form-control price-id" style="max-width:100px;">
+                        </div>
+                    </td>
+                    <td>
+                        <div class="me-1 me-sm-3 mt-2">
+                            <select class="form-select price-parent inp" name="price_parent" data-type="select">
+
+                            </select>
+                        </div>
+                    </td>
+                    <td>
+                      <div class="me-1 me-sm-3 mt-2">
+                          <input type="text" value="" autocomplete="off" placeholder="${__html(' ')}" class="form-control price-title" data-id="" data-index="" list="item-suggestions">
+                      </div>
+                    </td>
+                    <td class="price">
+                        <div class="me-1 me-sm-3 mt-2">
+                            <input type="text" value="" autocomplete="off" class="form-control text-right price-price" style="max-width:80px;">
+                        </div>
+                    </td>
+                    <td class="price">
+                        <div class="me-1 me-sm-3 mt-2">
+                          <select class="form-select price-unit inp" name="price_unit" data-type="select">
+                            <option value="length">${__html('Length')}</option>
+                            <option value="m2">${__html('㎡')}</option>
+                            <option value="hour">${__html('Hour')}</option>
+                            <option value="unit">${__html('Unit')}</option>
+                            <option value="meter">${__html('Meter')}</option>
+                            <option value="inch">${__html('Inch')}</option>
+                          </select>
+                        </div>
+                    </td>
+                    <td class="align-middle text-center pt-2"> 
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 16 16" width="24" height="24" class="bi bi-plus-circle text-success align-middle add-price po"><path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"></path><path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"></path></svg>
+                    </td>
+                </tr>
+              </thead>
+              <tbody>
+
+
+              </tbody>
+            </table>
+
+            <p class="form-text">${__html('Setup price classifications')}</p>
+
+            <input id="price" type="text" class="form-select inp d-none" name="price" data-type="text">
+
+            <h4 id="h-discounts" class="card-title mb-4 mt-4">${__html('Discounts')}</h4>
+            <div class="row">
+              <div class="col-lg-6">
+                <div class="form-group row mb-3 mt-1">
+                  <label class="col-sm-3 col-form-label">${__html('Visibility')}</label>
+                  <div class="col-sm-9">
+                    <div class="form-check">
+                      <input id="discount_visibility" class="form-check-input inp" name="discount_visibility" type="checkbox" value="1" data-type="checkbox">
+                      <label class="form-check-label" for="discount_visibility">
+                        ${__html('Document discounts')}
+                      </label>
+                    </div>
+                    <p class="form-text">${__html('Enable or disable discount visibility in quotations, waybills, and invoices.')}</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <h4 id="h-inventory" class="card-title mb-4 mt-4">${__html('Inventory')}</h4>
+            <div class="row">
+              <div class="col-lg-6">
+                  <div class="form-group row mb-3 mt-1">
+                    <label class="col-sm-3 col-form-label">${__html('Low stock')}</label>
+                    <div class="col-sm-9">
+                        <select id="notify_low_stock" class="form-select inp" name="notify_low_stock" data-type="select">
+                            <option value="">${__html('None')}</option>
+                            <option value="dashboard">${__html('Via dashboard')}</option>
+                            <option value="email">${__html('Via email')}</option>
+                            <option value="all">${__html('Via dashboard and email')}</option>
+                        </select>
+                        <p class="form-text">${__html('Product low stock notification settings.')}</p>
+                    </div>
+                  </div>
+              </div>
+              <div class="col-lg-6">
+                  <div class="form-group row mb-3 mt-1">
+                    <label class="col-sm-3 col-form-label">${__html('Emails')}</label>
+                    <div class="col-sm-9">
+                        <input id="notify_low_stock_emails" type="text" class="form-control inp" name="notify_low_stock_emails" data-type="emails">
+                        <p class="form-text">${__html('Example: alex@kenzap.com, orders@kenzap.com')}</p>
+                    </div>
+                  </div>
+              </div>
+              <div class="col-lg-6">
+              </div>
+            </div>
+
+            <h4 id="h-orders" class="card-title mb-4 mt-4">${__html('Orders')}</h4>
+            <div class="row">
+              <div class="col-lg-6">
+                  <div class="form-group row mb-3 mt-1">
+                    <label class="col-sm-3 col-form-label">${__html('Order ID')}</label>
+                    <div class="col-sm-9">
+                        <input id="last_order_id" type="text" class="form-control inp" name="last_order_id" data-type="text">
+                        <p class="form-text">${__html('Last order ID number.')}</p>
+                    </div>
+                  </div>
+              </div>
+              <div class="col-lg-6">
+                  <div class="form-group row mb-3 mt-1">
+                    <label class="col-sm-3 col-form-label">${__html('Waybill ID')}</label>
+                    <div class="col-sm-9">
+                        <input id="waybill_last_number" type="text" class="form-control inp" name="waybill_last_number" data-type="text">
+                        <p class="form-text">${__html('Last waybill ID number.')}</p> 
+                    </div>
+                  </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-lg-6">
+              
+              </div>
+              <div class="col-lg-6">
+                  <div class="form-group row mb-3 mt-1">
+                    <label class="col-sm-3 col-form-label">${__html('Annulled waybills')}</label>
+                    <div class="col-sm-9">
+                      <textarea id="waybill_anulled_list" type="text" class="form-control inp" name="waybill_anulled_list" data-type="textarea" rows="4"></textarea>
+                      <p class="form-text">${__html('List of canceled waybills queued for upcoming orders.')}</p>
+                    </div>
+                  </div>
+              </div>
+            </div>
+        </div>`;
+  }
+}
